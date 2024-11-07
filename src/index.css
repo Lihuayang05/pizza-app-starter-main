@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: 'Roboto Mono', sans-serif;
+  color: #f0f0f0;
+  background-color: #212121; /* Dark background */
+  border-bottom: 1.6rem solid #edc84b; /* Yellow accent */
+  min-height: 100vh;
+  padding: 3.2rem;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for centering content */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+.header {
+  align-self: stretch;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+.header h1 {
+  color: #edc84b;
+  text-transform: uppercase;
+  font-size: 5.6rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0 4rem; /* Added padding for spacing */
+}
+
+.header h1::before,
+.header h1::after {
+  content: '';
+  height: 3px;
+  width: 14rem;
+  background-color: #edc84b;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header h1::before {
+  left: -16rem;
+}
+
+.header h1::after {
+  right: -16rem;
+}
+/* Tagline Styling (Updated) */
+.tagline {
+  font-size: 2rem; 
+  font-weight: 300; 
+  color: #f0f0f0; 
+  margin-top: 1rem; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+}
+
+/* Menu Section */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+.menu h2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1.4rem 2.4rem;
+  border-top: 3px solid #edc84b;
+  border-bottom: 3px solid #edc84b;
+  color: #f0f0f0; /* Lighter text for contrast */
+  letter-spacing: 2px;
+}
+
+.menu > p {
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 80%;
+  color: #e0e0e0; /* Slightly lighter gray for text */
+  margin-top: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+/* Pizza Grid (Updated - Widened Container) */
+.pizzas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr)); /* Slightly reduced min-width for better fitting */
+  gap: 5.6rem;
+  width: 100%;
+}
+
+/* Individual Pizza Item */
+.pizza {
+  display: flex;
+  gap: 2.4rem;
+  padding: 2.4rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%; /* Ensure the pizza box fills the container */
+  overflow: hidden;
+}
+
+.pizza:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.pizza img {
+  width: 13rem;
+  height: 13rem;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #edc84b;
+}
+
+.pizza div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.8rem 0;
+}
+
+.pizza h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.pizza p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #666;
+  margin-bottom: auto;
+}
+
+.pizza span {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #edc84b;
+}
+
+/* Sold Out State */
+.pizza.sold-out {
+  color: #999;
+}
+
+.pizza.sold-out img {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+/* Footer Section */
+.footer {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-top: 5.6rem;
+  text-align: center;
+  background-color: #edc84b;
+  padding: 2.4rem 0;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+/* Button Styling */
+.btn {
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #333;
+  background-color: #ffffff;
+  padding: 1.4rem 3.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.07);
+}
+
+.btn:focus {
+  outline: 3px solid #ffffff;
+}
+
+/* Responsive Spacing and Fonts */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 4.8rem;
+  }
+
+  .menu h2 {
+    font-size: 3rem;
+  }
+
+  .pizza {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pizza img {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .container {
+    padding: 1.6rem;
+  }
+
+  .footer {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    padding: 1.2rem 2.8rem;
+  }
+}
